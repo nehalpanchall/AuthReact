@@ -1,9 +1,13 @@
+import { useState } from 'react';
+
 function Registration() {
-  return (
-    <>
-      <h1>Registration Page</h1>
-    </>
-  );
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState('');
+  const [error, setError] = useState('');
+
+  return <></>;
 }
 
 export default Registration;
