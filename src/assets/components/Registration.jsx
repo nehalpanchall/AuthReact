@@ -7,9 +7,15 @@ function Registration() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+  };
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Username: </label>
         <input
           type="text"
