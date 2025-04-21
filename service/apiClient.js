@@ -7,5 +7,7 @@ class ApiClient {
     };
   }
 
-  async customFetch(endpoint, options = {}) {}
+  async customFetch(endpoint, options = {}) {
+    const url = `${this.baseURL}${endpoint}`;
+  }
 }
