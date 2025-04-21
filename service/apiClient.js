@@ -6,4 +6,6 @@ class ApiClient {
       Accept: 'application/json',
     };
   }
+
+  async customFetch(endpoint, options = {}) {}
 }
