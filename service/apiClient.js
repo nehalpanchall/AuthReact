@@ -15,5 +15,9 @@ class ApiClient {
       header,
       credentials: 'include', // For Cookie
     };
+
+    try {
+      const response = await fetch(url, config);
+    } catch (error) {}
   }
 }
