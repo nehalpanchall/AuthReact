@@ -10,5 +10,10 @@ class ApiClient {
   async customFetch(endpoint, options = {}) {
     const url = `${this.baseURL}${endpoint}`;
     const header = { ...this.defaultHeaders, ...options.header };
+    const config = {
+      ...options,
+      header,
+      credentials: 'include', // For Cookie
+    };
   }
 }
