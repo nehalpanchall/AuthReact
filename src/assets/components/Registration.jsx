@@ -15,8 +15,11 @@ function Registration() {
 
     try {
       const data = await apiClient.userRegister(userName, email, password);
+      setLoading(false);
       console.log(data);
-    } catch (error) {}
+    } catch (error) {
+      setLoading(false);
+    }
   };
 
   return (
