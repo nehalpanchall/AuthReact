@@ -32,3 +32,8 @@ class ApiClient {
     }
   }
 }
+
+// singleton design spattern
+const apiClient = new ApiClient();
+
+export default apiClient;
