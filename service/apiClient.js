@@ -9,10 +9,10 @@ class ApiClient {
 
   async customFetch(endpoint, options = {}) {
     const url = `${this.baseURL}${endpoint}`;
-    const header = { ...this.defaultHeaders, ...options.header };
+    const headers = { ...this.defaultHeaders, ...options.header };
     const config = {
       ...options,
-      header,
+      headers,
       credentials: 'include', // For Cookie
     };
 
@@ -33,7 +33,7 @@ class ApiClient {
   }
 }
 
-// singleton design spattern
+// singleton design pattern
 const apiClient = new ApiClient();
 
 export default apiClient;
