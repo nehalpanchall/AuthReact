@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import apiClient from '../../../service/apiClient';
+import { useNavigate } from 'react-router-dom';
 
 function Registration() {
   const [userName, setUsername] = useState('');
@@ -7,6 +8,8 @@ function Registration() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,6 +19,10 @@ function Registration() {
     try {
       const data = await apiClient.userRegister(userName, email, password);
       console.log(data);
+
+      if (data.success) {
+        navigate('/login');
+      }
     } catch (error) {
       setError(error.message);
     } finally {
