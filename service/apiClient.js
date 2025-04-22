@@ -18,17 +18,17 @@ class ApiClient {
 
     try {
       const response = await fetch(url, config);
+      const data = await response.json();
+
       if (!response.ok) {
-        const errorData = await response.json();
-        console.error('API Error:', errorData);
-        throw new Error('Request failed with status: ' + response.status);
+        console.error('API Error:', data);
+        throw new Error('Request failed with status: ' + response.status); // custom error message using new keyword
       }
 
-      const data = await response.json();
       return data;
     } catch (error) {
       console.error('API Fetching error:', error);
-      throw error;
+      throw error; // original error
     }
   }
 
