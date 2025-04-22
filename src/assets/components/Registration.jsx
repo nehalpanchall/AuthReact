@@ -15,12 +15,12 @@ function Registration() {
 
     try {
       const data = await apiClient.userRegister(userName, email, password);
-      setLoading(false);
+      console.log(data);
+    } catch (error) {
+    } finally {
       setUsername('');
       setEmail('');
       setPassword('');
-      console.log(data);
-    } catch (error) {
       setLoading(false);
     }
   };
