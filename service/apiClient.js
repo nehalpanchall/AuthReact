@@ -35,7 +35,7 @@ class ApiClient {
   // auth endpoints
 
   async userRegister(userName, email, password) {
-    return this.customFetch('users/register', {
+    return this.customFetch('/users/register', {
       method: 'POST',
       body: JSON.stringify({ userName, email, password }),
     });
