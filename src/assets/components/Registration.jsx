@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function Registration() {
-  const [username, setUsername] = useState('');
+  const [userName, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -19,8 +19,8 @@ function Registration() {
         <label>Username: </label>
         <input
           type="text"
-          name="username"
-          value={username}
+          name="userName"
+          value={userName}
           onChange={(e) => setUsername(e.target.value)}
           required
           autoFocus
