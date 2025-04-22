@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import apiClient from '../../../service/apiClient';
 
 function Registration() {
   const [userName, setUsername] = useState('');
@@ -11,6 +12,11 @@ function Registration() {
     e.preventDefault();
     setLoading(true);
     setError('');
+
+    try {
+      const data = await apiClient.userRegister(userName, email, password);
+      console.log(data);
+    } catch (error) {}
   };
 
   return (
