@@ -17,6 +17,7 @@ function Registration() {
       const data = await apiClient.userRegister(userName, email, password);
       console.log(data);
     } catch (error) {
+      setError(error.message);
     } finally {
       setUsername('');
       setEmail('');
