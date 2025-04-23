@@ -24,7 +24,13 @@ function Login() {
           state: data,
         });
       }
-    } catch (error) {}
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setEmail('');
+      setPassword('');
+      setLoading(false);
+    }
   };
 
   return (
