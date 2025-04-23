@@ -6,13 +6,17 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const submitHandle = () => {};
+  const submitHandle = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+  };
 
   return (
     <>
       <form onSubmit={submitHandle}>
         <label htmlFor="email">Email: </label>
-        <input type="text" name="email" id="email" value={email} /> <br />{' '}
+        <input type="text" name="email" id="email" value={email} /> <br />
         <br />
         <label htmlFor="password">Password: </label>
         <input type="password" name="password" id="password" value={password} />
