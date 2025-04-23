@@ -1,4 +1,5 @@
 import { use, useState } from 'react';
+import apiClient from '../../../service/apiClient';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -6,10 +7,15 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const submitHandle = (e) => {
+  const submitHandle = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
+
+    try {
+      const data = await apiClient.userLogin(email, password);
+      console.log(data);
+    } catch (error) {}
   };
 
   return (
