@@ -1,11 +1,14 @@
 import { use, useState } from 'react';
 import apiClient from '../../../service/apiClient';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+  const navigate = useNavigate();
 
   const submitHandle = async (e) => {
     e.preventDefault();
@@ -15,6 +18,12 @@ function Login() {
     try {
       const data = await apiClient.userLogin(email, password);
       console.log(data);
+
+      if (data.success) {
+        navigate('/dashboard', {
+          state: data,
+        });
+      }
     } catch (error) {}
   };
 
