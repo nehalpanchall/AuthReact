@@ -1,6 +1,12 @@
+import { useState } from 'react';
 import apiClient from '../../../service/apiClient';
 
 const Profile = () => {
+  const [id, setId] = useState('');
+  const [userName, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [role, setRole] = useState('');
+
   try {
     const response = apiClient.userProfile();
     response.then((result) => {
