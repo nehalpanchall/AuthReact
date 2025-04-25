@@ -47,6 +47,10 @@ class ApiClient {
       body: JSON.stringify({ email, password }),
     });
   }
+
+  async userProfile() {
+    return this.customFetch('/users/profile');
+  }
 }
 
 // singleton design pattern
