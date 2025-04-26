@@ -24,6 +24,17 @@ const Profile = () => {
   return (
     <>
       <h1>User Profile</h1>
+
+      {!hasUserData ? (
+        <h3>Data unavailble</h3>
+      ) : (
+        <span>
+          {id} <br />
+          {userName} <br />
+          {email} <br />
+          {role} <br />
+        </span>
+      )}
     </>
   );
 };
