@@ -12,6 +12,11 @@ const Profile = () => {
     response.then((result) => {
       const userData = result.data;
       const { _id, userName, email, role } = userData;
+
+      setId(_id);
+      setUsername(userName);
+      setEmail(email);
+      setRole(role);
     });
   } catch (error) {}
   return (
